@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.multipart.maxSize" value="104857600" /> <!-- about 100mb -->
+
+	<package name="opentosca" extends="struts-default, tiles-default, json-default">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+        <global-results>
+  		  <result name="error" type="tiles">errorLayout</result>
+  	    </global-results>
+  		
+	    <global-exception-mappings>
+	        <exception-mapping exception="java.lang.Exception" result="error" />
+	   	</global-exception-mappings>
+
+		<action name="index"
+			class="org.opentosca.ui.admin.action.GetUploadedCSARListAction">
+			<result name="success" type="tiles">baseLayout</result>
+			
+		</action>
+
+		<action name="getCSARContent"
+			class="org.opentosca.ui.admin.action.GetSelectedCSARBrowsingAction">
+			<result type="json" />
+		</action>
+
+		<action name="getHistory"
+			class="org.opentosca.ui.admin.action.GetCSARInstancePlanHistoryAction">
+			<result type="json" />
+		</action>
+
+		<action name="getCSARList"
+			class="org.opentosca.ui.admin.action.GetUploadedCSARListAction">
+			<result type="json" />
+		</action>
+
+		<action name="getCSARInstanceList"
+			class="org.opentosca.ui.admin.action.GetCSARInstanceListAction">
+			<result type="json" />
+		</action>
+
+		<action name="getBuildPlanFromHistory"
+			class="org.opentosca.ui.admin.action.GetBuildInformationsFromHistoryAction">
+			<result type="json" />
+		</action>
+
+		<action name="getSpecificPlanFromHistory"
+			class="org.opentosca.ui.admin.action.GetCSARInstanceOnePlanFromHistoryAction">
+			<result type="json" />
+		</action>
+
+		<action name="getRunningPlansInformations"
+			class="org.opentosca.ui.admin.action.GetCSARInstanceRunningPlansAction">
+			<result type="json" />
+		</action>
+
+		<action name="getCSARPublicPlans"
+			class="org.opentosca.ui.admin.action.GetSelectedCSARPublicPlansAction">
+			<result type="json" />
+		</action>
+
+		<action name="getCSARUploadInformations"
+			class="org.opentosca.ui.admin.action.GetSelectedCSARUploadStatusAction">
+			<result type="json" />
+		</action>
+
+		<action name="postBUILDInvocation"
+			class="org.opentosca.ui.admin.action.PutPublicPlanBUILDInvocationAction">
+			<result type="json" />
+		</action>
+
+		<action name="postTERMINATIONInvocation"
+			class="org.opentosca.ui.admin.action.PostPublicPlanTERMINATIONInvocationAction">
+			<result type="json" />
+		</action>
+
+		<action name="postMANAGEMENTInvocation"
+			class="org.opentosca.ui.admin.action.PostPublicPlanMANAGEMENTInvocationAction">
+			<result type="json" />
+		</action>
+
+		<action name="uploadCSAR" class="org.opentosca.ui.admin.action.UploadCSARAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+			</result>
+		</action>
+
+		<action name="uploadCSARFromURL"
+			class="org.opentosca.ui.admin.action.UploadCSARFromURLAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+			</result>
+		</action>
+
+		<action name="deleteCSAR" class="org.opentosca.ui.admin.action.DeleteCSARAction">
+			<result type="json" />
+		</action>
+		
+		<action name="getContainerBaseURI" class="org.opentosca.ui.admin.action.GetContainerBaseURI">
+			<result type="json" />
+		</action>
+
+	</package>
+
+</struts>

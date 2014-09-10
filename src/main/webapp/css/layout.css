@@ -1,0 +1,324 @@
+@CHARSET "ISO-8859-1";
+
+/********************************************************** Page Structure *****************************************************/
+body {
+	margin: 0px;
+	background: url('../images/backgroundTexture.jpg');
+	font-family: calibri, verdana, arial;
+	font-size: 11pt;
+	text-align: justify;
+}
+
+div#pageContainer {
+	background: url('../images/backgroundStripe.jpg');
+	width: 100%;
+	float: left;
+}
+
+div#page {
+	visibility: hidden;
+	width: 1146px;
+	position: absolute;
+	left: 50%;
+	margin-left: -573px;
+}
+
+/** for all divs inside of div#page **/
+div#page>div {
+	width: 1146px;
+	float: left;
+}
+
+div#header {
+	height: 276px;
+	background: url('../images/header.jpg');
+}
+
+div#footer {
+	height: 64px;
+	background: url('../images/footer.jpg');
+}
+
+/********************************************************** Main Menu *****************************************************/
+div#mainMenu {
+	height: 70px;
+	width: 960px;
+	margin-left: 60px;
+	margin-top: 206px;
+}
+
+div#mainMenu>a.mainMenuButton {
+	float: left;
+	height: 70px;
+}
+
+/********** overview **********/
+div#mainMenu>a.mainMenuButton#overviewButton {
+	background: url('../images/overviewButton.jpg');
+	width: 177px;
+}
+
+div#mainMenu>a.mainMenuButton#overviewButton:hover {
+	background: url('../images/overviewButtonHover.jpg');
+}
+
+div#mainMenu>a.mainMenuButton#overviewButton.selected {
+	background: url('../images/overviewButtonSelected.jpg');
+}
+
+/********** manage view **********/
+div#mainMenu>a.mainMenuButton#deployCSARButton {
+	background: url('../images/manageButton.jpg');
+	width: 189px;
+}
+
+div#mainMenu>a.mainMenuButton#deployCSARButton:hover {
+	background: url('../images/manageButtonHover.jpg');
+}
+
+div#mainMenu>a.mainMenuButton#deployCSARButton.selected {
+	background: url('../images/manageButtonSelected.jpg');
+}
+
+/********** about **********/
+div#mainMenu>a.mainMenuButton#aboutButton {
+	background: url('../images/aboutButton.jpg');
+	width: 164px;
+}
+
+div#mainMenu>a.mainMenuButton#aboutButton:hover {
+	background: url('../images/aboutButtonHover.jpg');
+}
+
+div#mainMenu>a.mainMenuButton#aboutButton.selected {
+	background: url('../images/aboutButtonSelected.jpg');
+}
+
+/********************************************************** Content *****************************************************/
+
+/********** content table **********/
+table#contentTable {
+	float: left;
+	width: 1146px;
+	padding: 0px;
+	margin: 0px;
+}
+
+/** menu column **/
+#CSARListMenuTable {
+	overflow: hidden;
+}
+
+.CSARListItemUnselected {
+	background-position: center;
+}
+
+.CSARListItemUnselected td:first-child {
+	overflow: hidden;
+	background-image: url(../images/CSARListItemUnselectedFront.jpg);
+	width: 90%;
+}
+
+.CSARListItemUnselected td:nth-child(2) {
+	background-repeat: no-repeat;
+	background-image: url(../images/CSARListItemUnselectedEnd.jpg);
+}
+
+.CSARListItemSelected {
+	background-position: center;
+}
+
+.CSARListItemSelected td:first-child {
+	overflow: hidden;
+	background-image: url(../images/CSARListItemSelectedFront.jpg);
+	width: 90%;
+	color: rgb(111, 184, 193);
+}
+
+.CSARListItemSelected td:nth-child(2) {
+	background-repeat: no-repeat;
+	background-image: url(../images/CSARListItemSelectedEnd.jpg);
+}
+
+td#menuColumn {
+	width: 321px;
+	background: url('../images/contentLeft.jpg');
+}
+
+div#menu {
+	float: left;
+	margin-left: 35px;
+}
+
+/** CSAR list **/
+select#csarList {
+	width: 268px;
+	size: 12;
+}
+
+/** middle separator **/
+td#shadowTopColumn {
+	width: 31px;
+	height: 200px;
+}
+
+td#shadowMiddleAndBottomColumn {
+	width: 31px;
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+	background: url('../images/contentShadowMiddle.jpg');
+}
+
+/** content column **/
+td#contentColumn {
+	background: url('../images/contentRight.jpg');
+}
+
+/********** buttons **********/
+div#mainMenu>a.mainMenuButton#uploadCSARButton {
+	background: url('../images/uploadButton.jpg');
+	width: 0px;
+}
+
+div#mainMenu>a.mainMenuButton#processButton {
+	background: url('../images/processButton.jpg');
+	width: 0px;
+}
+
+div#mainMenu>a.mainMenuButton#invokeButton {
+	background: url('../images/invokeButton.jpg');
+	width: 0px;
+}
+
+a.styledButton {
+	text-decoration: none;
+	float: left;
+	height: 35px;
+}
+
+a.styledButton>div {
+	float: left;
+	height: 35px;
+}
+
+a.styledButton>div.left {
+	width: 18px;
+	background: url('../images/styledButtonLeft.jpg');
+}
+
+a.styledButton:Hover>div.left {
+	background: url('../images/styledButtonLeftHover.jpg');
+}
+
+a.styledButton:Hover>div.middle {
+	background: url('../images/styledButtonMiddleHover.jpg');
+	color: #ffffff;
+}
+
+a.styledButton>div.middle {
+	line-height: 33px;
+	font-family: calibri, arial, verdana;
+	font-size: 10pt;
+	color: #82999C;
+	font-weight: bold;
+	padding: 0px 5px;
+	background: url('../images/styledButtonMiddle.jpg');
+}
+
+a.styledButton>div.right {
+	width: 18px;
+	background: url('../images/styledButtonRight.jpg');
+}
+
+a.styledButton:Hover>div.right {
+	background: url('../images/styledButtonRightHover.jpg');
+}
+
+/********** Instances List **********/
+#CSARInstanceMenuTable {
+	overflow: hidden;
+	border-spacing: 0;
+}
+
+.CSARInstanceListItemUnselected {
+	background-position: center;
+}
+
+.CSARInstanceListItemUnselected td:first-child {
+	overflow: hidden;
+	background-image: url(../images/CSARListItemUnselectedFront.jpg);
+}
+
+.CSARInstanceListItemUnselected td:nth-child(2) {
+	background-repeat: no-repeat;
+	background-image: url(../images/CSARInstanceListItemUnselectedEnd.jpg);
+}
+
+.CSARInstanceListItemSelected {
+	background-position: center;
+}
+
+.CSARInstanceListItemSelected td:first-child {
+	overflow: hidden;
+	background-image: url(../images/CSARListItemSelectedFront.jpg);
+	color: rgb(111, 184, 193);
+}
+
+.CSARInstanceListItemSelected td:nth-child(2) {
+	background-repeat: no-repeat;
+	background-image: url(../images/CSARInstanceListItemSelectedEnd.jpg);
+}
+
+.CSARManagementPlanItem {
+	background-position: center;
+}
+
+.CSARManagementPlanItem td:first-child {
+	background-repeat: no-repeat;
+	background-image: url(../images/CSARManagementPlanItemFront.jpg);
+}
+
+.CSARManagementPlanItem td:nth-child(2) {
+	overflow: hidden;
+	background-image: url(../images/CSARListItemUnselectedFront.jpg);
+}
+
+.CSARManagementPlanItem td:nth-child(3) {
+	overflow: hidden;
+	background-image: url(../images/CSARListItemUnselectedFront.jpg);
+}
+
+.CSARManagementPlanItem td:nth-child(4) {
+	background-repeat: no-repeat;
+	background-image: url(../images/CSARManagementPlanItemEnd.jpg);
+}
+
+/********** mail links **********/
+a.email {
+	color: #787878;
+	text-decoration: none;
+}
+
+a.email:HOVER {
+	text-decoration: underline;
+}
+
+/********************************************************** Others ******************************************************/
+div.errorHeadline {
+	color: red;
+	font-size: 30px;
+	margin-bottom: 25px
+}
+
+div.errorText  {
+	
+}
+
+span.description {
+	color: red;
+}
+
+div.errorFooter {
+	margin-top: 25px
+}
